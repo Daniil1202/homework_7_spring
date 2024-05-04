@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Main page</h1>
+<h2 th:text="${text}"></h2>
+<a href="/login">Login</a>
+
+<li sec:authorize="hasRole('USER')"><a href="/user">User</a></li>
+<li sec:authorize="hasRole('ADMIN')"><a href="/admin">Admin</a></li>
+<a><form class="link" th:action="@{/logout}" method="post">
+    <input class>="link" type="submit" value="Logout"/>
+</form></a>
+</body>
+</html>
